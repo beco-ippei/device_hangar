@@ -6,7 +6,10 @@ class Device < ActiveRecord::Base
 
   attr_accessor :id, :name, :long_name, :os, :user, :bookers
 
-  validates :presence, :id, :name, :long_name, :os
+  validates :id, presence: true
+  validates :name, presence: true
+  validates :long_name, presence: true
+  validates :os, presence: true
 
   def self.all
     Redis.current.keys('device:*').map do |key|
