@@ -1,22 +1,12 @@
-#class Device < ActiveRecord::Base
+class Device < ActiveRecord::Base
 #TODO: やり方わからないのでボチボチ実装してみる
-class Device
 #class Device
-  include ActiveModel
+#class Device
+#  include ActiveModel
 
   attr_accessor :id, :name, :long_name, :os, :user, :bookers
 
-#  validates :presence, :id, :name, :long_name, :os
-
-  def initialize(params = {})
-    #TODO やり方調べる
-    params.each do |key, val|
-
-    end
-  end
-
-  def self.model_name; 'device'; end
-  #def self.singular_route_key; 'id'; end
+  validates :presence, :id, :name, :long_name, :os
 
   def self.all
     Redis.current.keys('device:*').map do |key|
