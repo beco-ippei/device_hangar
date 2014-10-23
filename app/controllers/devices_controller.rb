@@ -34,7 +34,7 @@ class DevicesController < ApplicationController
     if @device.use user_id
       redirect_to devices_url, notice: 'Device locked for you'
     else
-      render action: 'index', notice: 'fail to use'
+      redirect_to devices_url, warning: 'fail to use'
     end
 
     #TODO: format
@@ -119,7 +119,7 @@ class DevicesController < ApplicationController
 
     #TODO should authentication
     def set_user
-      @user = {id: 'kato'}
+      @user = {id: 5}
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

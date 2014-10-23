@@ -5,7 +5,7 @@ class CreateDevices < ActiveRecord::Migration
       t.string :name
       t.string :long_name
       t.string :os
-      t.string :user
+      t.integer :user_id
       t.timestamp :lock_at
 
       t.timestamps

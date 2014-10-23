@@ -11,8 +11,8 @@ module DevicesHelper
   end
 
   # format time
-  def tf(time_string)
-    time = Time.parse time_string
+  def tf(time)
+    time = Time.parse time_string unless time.kind_of? Time
     time.strftime '%m/%d(%a) %H:%M' if time
   rescue
     nil

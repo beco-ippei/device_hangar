@@ -1,4 +1,6 @@
-<h1>Listing devices</h1>
+<h1>一覧</h1>
+
+<p>検索、並び替えなどは TBD... </p>
 
 <table class="table table-hover">
   <thead>
@@ -16,14 +18,14 @@
   <tbody>
     <% @devices.each_with_index do |device, idx| %>
       <tr>
-        <td><%= idx+1 %></td>
+        <td><%= device.number %></td>
         <td><%= link_to device.name, edit_device_path(device) %></td>
         <td><%#= device.attributes %><%= device.long_name %></td>
         <td><%= device.os %></td>
-        <td><%= device.user || '-' %></td>
-        <td><%= device.user && tf(device.lock_at) || '-' %></td>
+        <td><%= device.user_id || '-' %></td>
+        <td><%= device.user_id && tf(device.lock_at) || '-' %></td>
         <td>
-          <% if using? device.user %>
+          <% if using? device.user_id %>
             <%= link_to '返す', release_device_path(device), method: :post, class: 'btn btn-xs btn-default' %>
           <% else %>
             <%= link_to '使う', use_device_path(device), method: :post, class: 'btn btn-xs btn-default' %>

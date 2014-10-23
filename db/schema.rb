@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20141019140812) do
     t.string   "name"
     t.string   "long_name"
     t.string   "os"
-    t.string   "user"
+    t.integer  "user_id"
     t.datetime "lock_at"
     t.datetime "created_at"
     t.datetime "updated_at"
