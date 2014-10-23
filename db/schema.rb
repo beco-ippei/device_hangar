@@ -14,9 +14,12 @@
 ActiveRecord::Schema.define(version: 20141019140812) do
 
   create_table "devices", force: true do |t|
+    t.integer  "number"
     t.string   "name"
     t.string   "long_name"
     t.string   "os"
+    t.string   "user"
+    t.datetime "lock_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

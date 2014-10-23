@@ -1,26 +1,34 @@
 <h1>Listing devices</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
+      <th>#</th>
       <th>Name</th>
       <th>Long name</th>
       <th>Os</th>
-      <th></th>
-      <th></th>
+      <th>User</th>
+      <th>use from</th>
       <th></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @devices.each do |device| %>
+    <% @devices.each_with_index do |device, idx| %>
       <tr>
-        <td><%= device.name %></td>
-        <td><%= device.long_name %></td>
+        <td><%= idx+1 %></td>
+        <td><%= link_to device.name, edit_device_path(device) %></td>
+        <td><%#= device.attributes %><%= device.long_name %></td>
         <td><%= device.os %></td>
-        <td><%= link_to 'Show', device %></td>
-        <td><%= link_to 'Edit', edit_device_path(device) %></td>
-        <td><%= link_to 'Destroy', device, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= device.user || '-' %></td>
+        <td><%= device.user && tf(device.lock_at) || '-' %></td>
+        <td>
+          <% if using? device.user %>
+            <%= link_to '返す', release_device_path(device), method: :post, class: 'btn btn-xs btn-default' %>
+          <% else %>
+            <%= link_to '使う', use_device_path(device), method: :post, class: 'btn btn-xs btn-default' %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

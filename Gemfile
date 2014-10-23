@@ -17,15 +17,19 @@ gem 'redis-objects'
 #
 ## Use CoffeeScript for .js.coffee assets and views
 #gem 'coffee-rails', '~> 4.0.0'
-#
-## See https://github.com/sstephenson/execjs#readme for more supported runtimes
-## gem 'therubyracer', platforms: :ruby
-#
+
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+gem 'therubyracer', platforms: :ruby
+
 ## Use jquery as the JavaScript library
-#gem 'jquery-rails'
-#
+gem 'jquery-rails'
+
 ## Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 #gem 'turbolinks'
+
+# use bootstrap
+gem 'twitter-bootswatch-rails', '~> 3.1.1'
+gem 'twitter-bootswatch-rails-helpers'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
@@ -47,4 +51,8 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'pry'
+group :development do
+  gem 'pry'
+  gem 'pry-rails'
+end
+
