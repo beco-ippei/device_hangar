@@ -1,9 +1,9 @@
 require 'time'
 module DevicesHelper
-  def using?(user_id)
-    if user_id.nil?
+  def using?(user)
+    if user.nil?
       false     # 誰も使っていない
-    elsif user_id == @user[:id]
+    elsif user.id == current_user.id
       true      # 自分が使ってる
     else
       false     # 自分以外が使っている
@@ -16,5 +16,12 @@ module DevicesHelper
     time.strftime '%m/%d(%a) %H:%M' if time
   rescue
     nil
+  end
+
+  def os_name(device)
+    [
+      device.try(:os),
+      device.try(:version)
+    ].join(' ').strip
   end
 end

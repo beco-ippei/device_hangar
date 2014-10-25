@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :number %><br>
+    <%= f.number_field :number %>
+  </div>
+  <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
@@ -23,7 +27,14 @@
     <%= f.label :os %><br>
     <%= f.text_field :os %>
   </div>
+  <div class="field">
+    <%= f.label :version %><br>
+    <%= f.text_field :version %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+<p>TODO: user or (force) release buttons</p>
+
