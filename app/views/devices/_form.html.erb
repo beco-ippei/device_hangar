@@ -11,17 +11,31 @@
     </div>
   <% end %>
 
+<style>
+.field label { width: 160px; text-align: right; }
+.field br { display: none; }
+.field br:after { margin: 0 5px; }
+</style>
+
   <div class="field">
     <%= f.label :number %><br>
     <%= f.number_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :classify %><br>
+    <%= f.text_field :classify %>
   </div>
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :long_name %><br>
-    <%= f.text_field :long_name %>
+    <%= f.label :carrier %><br>
+    <%= f.text_field :carrier %>
+  </div>
+  <div class="field">
+    <%= f.label :sim %><br>
+    <%= f.check_box :sim %>
   </div>
   <div class="field">
     <%= f.label :os %><br>
@@ -31,10 +45,22 @@
     <%= f.label :version %><br>
     <%= f.text_field :version %>
   </div>
+  <div class="field">
+    <%= f.label :telephone_number %><br>
+    <%= f.text_field :telephone_number %>
+  </div>
+  <div class="field">
+    <%= f.label :passcode %><br>
+    <%= f.text_field :passcode %>
+  </div>
+  <div class="field">
+    <%= f.label :emails %><br>
+    <%= f.text_field :emails %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
 
-<p>TODO: user or (force) release buttons</p>
+<p>TODO: for user or (force) release buttons</p>
 

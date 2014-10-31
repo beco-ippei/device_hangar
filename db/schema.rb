@@ -15,11 +15,15 @@ ActiveRecord::Schema.define(version: 20141024042703) do
 
   create_table "devices", force: true do |t|
     t.integer  "number"
+    t.string   "classify"
     t.string   "name"
-    t.string   "long_name"
     t.string   "carrier"
+    t.boolean  "sim"
     t.string   "os"
     t.string   "version"
+    t.string   "telephone_number"
+    t.string   "passcode"
+    t.string   "emails"
     t.integer  "user_id"
     t.datetime "lock_at"
     t.datetime "created_at"

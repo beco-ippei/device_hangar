@@ -7,7 +7,7 @@
     <tr>
       <th>#</th>
       <th>Name</th>
-      <th>Long name</th>
+      <th>Classify</th>
       <th>Os</th>
       <th>Carrier</th>
       <th>User</th>
@@ -21,7 +21,7 @@
       <tr>
         <td><%= device.number %></td>
         <td><%= link_to device.name, edit_device_path(device) %></td>
-        <td><%= device.long_name %></td>
+        <td><%= device.classify.upcase %></td>
         <td><%= os_name device %></td>
         <td><%= device.try(:carrier) || '-'  %></td>
         <td><%= device.user.try(:name) || '-' %></td>

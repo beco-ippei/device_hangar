@@ -4,7 +4,6 @@ class Device < ActiveRecord::Base
 
   validates :number, presence: true, uniqueness: true
   validates :name, presence: true
-  validates :long_name, presence: true
 #  validates :os
 
   # 使う (利用者として登録、重複はfalse)
